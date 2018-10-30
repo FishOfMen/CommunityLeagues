@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
-  selector: 'app-root',
+  selector: 'cl-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'community-leagues';
+export class AppComponent implements OnInit {
+  @ViewChild('sidenav')
+  sidenav?: MatSidenav;
+
+  constructor() {}
+
+  ngOnInit() {}
 }
