@@ -7,3 +7,7 @@ body {
   margin: 0;
   height: 100%;
 }
+
+.primary-dark {
+  background-color: mat-color($cl-primary, darker);
+}

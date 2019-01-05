@@ -1,6 +1,6 @@
 <div fxFlexFill fxLayout="column">
   <mat-toolbar color="primary">
-    <button mat-icon-button (click)="sidenav.toggle();" >
+    <button mat-icon-button (click)="sidenav.toggle();" *ngIf="_loggedIn$ | async" >
       <mat-icon>menu</mat-icon>
     </button>
     <span fxFlex>Community Leagues</span>
@@ -9,14 +9,17 @@
       <span>About</span>
     </button>
     <mat-divider [vertical]="true" class="cl__nav-divider"></mat-divider>
-    <button mat-icon-button>
+    <button mat-icon-button [matMenuTriggerFor]="accountMenu" *ngIf="_loggedIn$ | async">
       <mat-icon>account_circle</mat-icon>
+    </button>
+    <button mat-button *ngIf="!(_loggedIn$ | async)" routerLink="/login">
+      <span> Login</span>
     </button>
   </mat-toolbar>
   <mat-sidenav-container fxFlex>
     <mat-sidenav #sidenav class="cl__sidenav">
         <mat-nav-list class="cl__nav-list">
-          <mat-list-item (click)="sidenav.close();">
+          <mat-list-item (click)="sidenav.close();" routerLink="">
             <span fxFlex>Home</span><mat-icon color="accent">home</mat-icon>
           </mat-list-item>
         </mat-nav-list>
@@ -26,3 +29,7 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+<mat-menu #accountMenu="matMenu">
+  <button mat-menu-item (click)="_logout();">Logout</button>
+</mat-menu>

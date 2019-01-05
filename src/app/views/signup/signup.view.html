@@ -1,0 +1,33 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start center" class="primary-dark">
+    <form [formGroup]="signUpForm">
+        <div fxFlex="1 1 auto">
+            <mat-card class="cl__login-card">
+                <mat-card-title>
+                    <div class="cl__logo"></div>
+                </mat-card-title>
+                <mat-card-content>
+                    <div fxFlexFill fxLayout="column">
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="Email" formControlName="email" required >
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Password" formControlName="password" required >
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" required >
+                        </mat-form-field>
+                        <a mat-button color="accent" routerLink="/login">Already have an account? Login here</a>
+                    </div>
+                    <div *ngIf="_errorMessage">
+                        <span class="cl__login-error-message">{{ _errorMessage }}</span>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button type="button" color="accent" (click)="_join();" [disabled]="!signUpForm.valid">
+                        Join
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </form>
+</div>
