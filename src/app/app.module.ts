@@ -13,7 +13,6 @@ import { RoutingModule } from './app.routing';
     SharedModule,
     RoutingModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

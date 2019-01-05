@@ -1,0 +1,41 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start center" class="primary-dark">
+    <form [formGroup]="_loginForm">
+        <div fxFlex="1 1 auto">
+            <mat-card class="cl__login-card">
+                <mat-card-title>
+                    <div class="cl__logo"></div>
+                </mat-card-title>
+                <mat-card-content>
+                    <div fxFlexFill fxLayout="column">
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="Email" formControlName="email" required >
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Password" formControlName="password" required >
+                        </mat-form-field>
+                        <div fxLayout="row" style="margin-bottom: 16px;">
+                            <div fxFlex style="padding-top: 6px;">
+                                <mat-checkbox formControlName="remember-me">Remember me</mat-checkbox>
+                            </div>
+                            <span fxFlex></span>
+                            <span fxFlex>
+                                <a mat-button color="accent" routerLink="/signup">Create Account</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div *ngIf="_errorMessage">
+                        <span class="cl__login-error-message">{{ _errorMessage }}</span>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button type="button" color="accent" (click)="_login();" [disabled]="!_loginForm.valid">
+                        Login
+                    </button>
+                    <button mat-button type="button">
+                        Forgot Password
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </form>
+</div>
