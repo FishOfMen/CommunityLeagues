@@ -1,0 +1,12 @@
+<div fxFlexFill fxLayout="column">
+  <mat-toolbar>
+    <span>Leagues</span>
+  </mat-toolbar>
+  <div fxFlex>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let league of leagues">
+        <span>{{ league.name }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>

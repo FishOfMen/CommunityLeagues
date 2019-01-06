@@ -1,6 +1,5 @@
 import { Injectable, OnDestroy, Inject } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { startWith } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { CanActivate } from '@angular/router';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { BASE_API_ROUTE } from '../core/tokens';
@@ -15,16 +14,18 @@ export class AuthService implements CanActivate, OnDestroy {
   private auth_login_route: string;
   private auth_signup_route: string;
 
-  private loggedInSubject = new Subject<boolean>();
+  private loggedInSubject = new BehaviorSubject<boolean>(this.hasToken);
   private rememberMe = false;
 
   get loggedIn$(): Observable<boolean> {
-    return this.loggedInSubject.asObservable().pipe(
-      startWith(this.getToken() ? true : false),
-    );
+    return this.loggedInSubject.asObservable();
   }
   set loggedIn(val: boolean) {
     this.loggedInSubject.next(val);
+  }
+
+  get hasToken() {
+    return this.getToken() ? true : false;
   }
 
   constructor(
