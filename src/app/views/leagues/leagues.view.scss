@@ -1,0 +1,5 @@
+@import '../../../_cl.theme.scss';
+
+.mat-toolbar {
+  background-color: mat-color($cl-accent, lighter)
+}
