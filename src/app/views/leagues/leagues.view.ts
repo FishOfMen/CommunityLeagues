@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
+
 @Component({
   selector: 'cl-leagues',
   templateUrl: './leagues.view.html',
@@ -11,6 +12,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LeaguesView implements OnInit {
 
   constructor() { }
+
+  League = {
+    title : "Test",
+    body : "This is body text"
+  }
 
   ngOnInit() {
   }

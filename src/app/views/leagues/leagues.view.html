@@ -1,11 +1,23 @@
-<mat-toolbar>
-  <mat-toolbar-row></mat-toolbar-row>
-  <mat-toolbar-row></mat-toolbar-row>
-  <mat-toolbar-row>
-    <span fxFlex></span>
-    <span fxFlex fxLayoutAlign="center center">Leagues</span>
-    <span fxFlex></span>
-  </mat-toolbar-row>
-  <mat-toolbar-row></mat-toolbar-row>
-  <mat-toolbar-row></mat-toolbar-row>
-</mat-toolbar>
+<div fxFlex fxLayout="Column">
+  <div>
+      <mat-toolbar>
+        <mat-toolbar-row></mat-toolbar-row>
+        <mat-toolbar-row></mat-toolbar-row>
+        <mat-toolbar-row>
+          <span fxFlex></span>
+          <span fxFlex fxLayoutAlign="center center">Leagues</span>
+          <span fxFlex></span>
+        </mat-toolbar-row>
+        <mat-toolbar-row></mat-toolbar-row>
+        <mat-toolbar-row></mat-toolbar-row>
+      </mat-toolbar>
+  </div>
+  <div>
+    <div fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
+        <div>
+          <cl-league-card fxFlex [league]="League"></cl-league-card>
+        </div>
+    </div>
+  </div>
+</div>
+
