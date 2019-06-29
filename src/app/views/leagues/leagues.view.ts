@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { LeaguesService } from './../../services/leagues.service';
 
 
 @Component({
@@ -11,14 +11,15 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LeaguesView implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _leaguesService: LeaguesService,
+  ) { }
 
-  League = {
-    title : "Test",
-    body : "This is body text"
-  }
+  leagues: any[];
 
   ngOnInit() {
+    this._leaguesService.getLeagues()
+      .subscribe(leagues => this.leagues = leagues);
   }
 
 }

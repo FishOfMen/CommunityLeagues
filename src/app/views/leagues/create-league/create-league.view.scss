@@ -1,0 +1,35 @@
+@import '../../../../cl.theme';
+
+.mat-card-title {
+  background-color: mat-color($cl-accent, lighter);
+  margin: 0;
+  padding: 25px;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.cl__createLeague-card {
+  margin-top: 60px;
+}
+
+.cl__create-error-message {
+  color: mat-color($cl-warn);
+}
+
+.mat-card-content {
+  padding: 10px;
+}
+
+.mat-card-actions {
+  padding: 10px;
+}
+
+.createButton {
+  margin: 5px;
+}
+
+.mat-form-field {
+  margin: 5px;
+}

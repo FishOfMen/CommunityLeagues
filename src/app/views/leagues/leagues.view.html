@@ -13,9 +13,12 @@
       </mat-toolbar>
   </div>
   <div>
-    <div fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
-        <div>
-          <cl-league-card fxFlex [league]="League"></cl-league-card>
+    <button mat-raised-button routerLink="create" color="accent">Create League</button>
+  </div>
+  <div>
+    <div fxFlex fxLayout="row wrap" fxLayoutAlign="center center" *ngFor="let league of leagues">
+        <div class="leagueCard">
+          <cl-league-card fxFlex [league]="league"></cl-league-card>
         </div>
     </div>
   </div>
