@@ -4,7 +4,20 @@
   background-color: mat-color($cl-accent, lighter)
 }
 
-.leagueCard {
-  width: 33.3%;
+.container {
+  background-color: lightgray;
 }
 
+.leaguesContainer {
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+}
+
+.item {
+  width: 100%;
+}
+
+.margins {
+  padding-left: 8px;
+  padding-right: 8px;
+}

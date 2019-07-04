@@ -1,25 +1,24 @@
-<div fxFlex fxLayout="Column">
-  <div>
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start center" class="container">
+  <div class="item">
       <mat-toolbar>
-        <mat-toolbar-row></mat-toolbar-row>
-        <mat-toolbar-row></mat-toolbar-row>
-        <mat-toolbar-row>
-          <span fxFlex></span>
-          <span fxFlex fxLayoutAlign="center center">Leagues</span>
-          <span fxFlex></span>
-        </mat-toolbar-row>
-        <mat-toolbar-row></mat-toolbar-row>
-        <mat-toolbar-row></mat-toolbar-row>
-      </mat-toolbar>
+          <mat-toolbar-row></mat-toolbar-row>
+          <mat-toolbar-row></mat-toolbar-row>
+          <mat-toolbar-row>
+            <span fxFlex></span>
+            <span fxFlex fxLayoutAlign="center center">Leagues</span>
+            <span fxFlex></span>
+          </mat-toolbar-row>
+          <mat-toolbar-row></mat-toolbar-row>
+          <mat-toolbar-row></mat-toolbar-row>
+        </mat-toolbar>
   </div>
-  <div>
+  <div fxFlex="5" fxLayoutAlign="end center" class="item margins">
     <button mat-raised-button routerLink="create" color="accent">Create League</button>
   </div>
-  <div>
-    <div fxFlex fxLayout="row wrap" fxLayoutAlign="center center" *ngFor="let league of leagues">
-        <div class="leagueCard">
-          <cl-league-card fxFlex [league]="league"></cl-league-card>
-        </div>
+  <div fxFlex="30" fxLayout="row wrap" fxLayoutAlign="space-evenly stretch" fxLayoutGap="8px"
+  fxLayout.xs="column" class="leaguesContainer" class="item margins">
+    <div fxFlex="1 1 33.3%" fxFlex.xs="1 0 auto"  *ngFor="let league of leagues">
+        <cl-league-card [league]="league"></cl-league-card>
     </div>
   </div>
 </div>

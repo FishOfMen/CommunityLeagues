@@ -1,6 +1,6 @@
-<div fxFlexFill fxLayout="column" fxLayoutAlign="start center" class="primary-dark">
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start center" class="primary-light">
   <form [formGroup]="_createLeagueForm">
-    <div fxFlex="1 1 auto">
+    <div fxFlex="1 1 auto" fxFlex.xs="1 1 100%">
       <mat-card class="cl__createLeague-card">
         <mat-card-title>
           Create League
@@ -13,23 +13,29 @@
             <mat-form-field>
               <input matInput type="text" placeholder="Address" formControlName="address" required>
             </mat-form-field>
-            <div fxLayout="row">
-              <mat-form-field>
+            <div fxLayout="row" fxLayout.xs="column">
+              <div fxFlex>
+                <mat-form-field>
                   <input matInput type="text" placeholder="City" formControlName="city" required>
-              </mat-form-field>
-              <mat-form-field>
-                  <input matInput type="text" placeholder="State" formControlName="state" required>
-              </mat-form-field>
-              <mat-form-field>
-                  <input matInput type="text" placeholder="Zip" formControlName="zip" required>
-              </mat-form-field>
+                </mat-form-field>
+              </div>
+              <div fxFlex>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="State" formControlName="state" required>
+                </mat-form-field>
+              </div>
+              <div fxFlex>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Zip" formControlName="zip" required>
+                </mat-form-field>
+              </div>
             </div>
             <mat-form-field>
               <textarea matInput type="text" placeholder="Description" formControlName="description"></textarea>
             </mat-form-field>
-            <div *ngIf="_errorMessage">
-                <span class="cl__create-error-message">{{ _errorMessage }}</span>
-            </div>
+          </div>
+          <div *ngIf="_errorMessage">
+              <span class="cl__create-error-message">{{ _errorMessage }}</span>
           </div>
         </mat-card-content>
         <mat-card-actions>
