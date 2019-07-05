@@ -5,6 +5,10 @@
 export const environment = {
   production: false,
   api_endpoint: 'http://communityleaguesapi/api',
+  websocket: {
+    key: '123456',
+    cluster: 'us2',
+  }
 };
 
 /*

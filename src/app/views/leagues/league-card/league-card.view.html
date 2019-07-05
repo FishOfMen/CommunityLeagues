@@ -1,8 +1,14 @@
 
-<mat-card fxFlex="1 1 auto" fxLayout="column">
-  <mat-card-title color="accent" fxFlex="0 1 auto">
-    <h1>{{ league.name }}</h1>
-  </mat-card-title>
+<mat-card fxFlex="1 1 auto" fxLayout="column" style="margin-bottom: 15px;">
+  <mat-card-header fxFlex>
+      <div mat-card-avatar fxFlex="0 1 auto"><mat-icon color="accent" class="league-icon">supervised_user_circle</mat-icon></div>
+      <mat-card-title color="accent" fxFlex="0 1 auto">
+          <h1>{{ league.name }}</h1>
+        </mat-card-title>
+  </mat-card-header>
+  <mat-card-subtitle fxFlex="0 1 auto">
+      {{ league.city }}, {{ league.state }} {{ league.zip }}
+    </mat-card-subtitle>
   <mat-card-content fxFlex="0 1 auto">
       {{ league.description }}
   </mat-card-content>

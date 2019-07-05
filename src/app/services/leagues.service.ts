@@ -4,8 +4,10 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { BASE_API_ROUTE } from '../core/tokens';
 import {  map, catchError, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import Pusher from 'pusher-js';
 
-
+declare const Websocket: Pusher;
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,11 @@ export class LeaguesService {
   private leagues_route: string;
   private create_league_route: string;
 
+  private websocket: Pusher;
+
+
+  channel: any;
+
   constructor(
     private http: HttpClient,
     private _auth_service: AuthService,
@@ -22,6 +29,13 @@ export class LeaguesService {
   ) {
     this.leagues_route = `${this.base_api_route}/league/leagues`;
     this.create_league_route = `${this.base_api_route}/league/create`;
+    this.websocket = new Pusher(environment.websocket.key, {
+      cluster: environment.websocket.cluster,
+      encrypted: false,
+      wsHost: '127.0.0.1',
+      wsPort: '6001',
+    });
+    this.channel = this.websocket.subscribe('leagues');
   }
 
   createLeague(name: string, address: string, city: string, state: string, zip: string, description: string, sport_id: string): Observable<any> {

@@ -12,12 +12,14 @@
           <mat-toolbar-row></mat-toolbar-row>
         </mat-toolbar>
   </div>
-  <div fxFlex="5" fxLayoutAlign="end center" class="item margins">
-    <button mat-raised-button routerLink="create" color="accent">Create League</button>
+  <div fxFlex="5" fxLayoutAlign="end center" class="item margins" style="padding-right: 25px; margin-bottom: 15px;">
+    <button mat-icon-button color="accent"  routerLink="create">
+      <mat-icon class="league-add">add_circle</mat-icon>
+    </button>
   </div>
-  <div fxFlex="30" fxLayout="row wrap" fxLayoutAlign="space-evenly stretch" fxLayoutGap="8px"
+  <div fxFlex="30" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="8px"
   fxLayout.xs="column" class="leaguesContainer" class="item margins">
-    <div fxFlex="1 1 33.3%" fxFlex.xs="1 0 auto"  *ngFor="let league of leagues">
+    <div fxFlex="1 1 32.7%" fxFlex.xs="1 0 auto" *ngFor="let league of leagues" >
         <cl-league-card [league]="league"></cl-league-card>
     </div>
   </div>

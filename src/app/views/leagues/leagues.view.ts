@@ -1,3 +1,4 @@
+import { WebsocketService } from './../../services/websocket.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -13,6 +14,7 @@ export class LeaguesView implements OnInit {
 
   constructor(
     private _leaguesService: LeaguesService,
+    private _websocketService: WebsocketService
   ) { }
 
   leagues: any[];
@@ -20,6 +22,10 @@ export class LeaguesView implements OnInit {
   ngOnInit() {
     this._leaguesService.getLeagues()
       .subscribe(leagues => this.leagues = leagues);
+
+    this._websocketService.subscribeToChannel('leagues', ['NewLeague'], (data) => {
+      this.leagues.push(data);
+    })
   }
 
 }
