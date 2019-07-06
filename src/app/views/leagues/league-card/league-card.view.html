@@ -3,7 +3,7 @@
   <mat-card-header fxFlex>
       <div mat-card-avatar fxFlex="0 1 auto"><mat-icon color="accent" class="league-icon">supervised_user_circle</mat-icon></div>
       <mat-card-title color="accent" fxFlex="0 1 auto">
-          <h1>{{ league.name }}</h1>
+          <a routerLink="leagues/league/{{ league.id }}"> <h1>{{ league.name }}</h1></a>
         </mat-card-title>
   </mat-card-header>
   <mat-card-subtitle fxFlex="0 1 auto">

@@ -1,3 +1,11 @@
+@import '../../../../_cl.theme.scss';
+
 .league-icon {
   font-size: 36px;
+}
+
+
+a {
+  color: mat-color($cl-primary, darker);
+  text-decoration: none;
 }

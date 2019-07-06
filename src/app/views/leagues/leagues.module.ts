@@ -10,7 +10,8 @@ import { CreateLeagueView } from './create-league/create-league.view';
 
 const LEAGUES_ROUTES: Routes = [
   { path: '', component: LeaguesView },
-  { path: 'create', component: CreateLeagueView }
+  { path: 'create', component: CreateLeagueView },
+  { path: 'leagues/league/:id', component: LeagueView}
 ];
 
 @NgModule({

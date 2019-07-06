@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { LeaguesService } from './../../services/leagues.service';
+import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class LeaguesView implements OnInit {
       .subscribe(leagues => this.leagues = leagues);
 
     this._websocketService.subscribeToChannel('leagues', ['NewLeague'], (data) => {
-      this.leagues.push(data);
+      this.leagues.unshift(data);
     })
   }
 
