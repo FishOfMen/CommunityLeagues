@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api_endpoint: 'http://communityleaguesapi/api',
+  api_endpoint: 'https://communityleaguesapp.com/api',
+  //http://communityleaguesapi/api',
   websocket: {
     key: '123456',
     cluster: 'us2',

@@ -1,3 +1,14 @@
 <div fxFlexFill fxLayoutAlign="center" class="container">
-  <h1>{{ league.name }}</h1>
+  <div fxFlex >
+    <mat-grid-list cols="4" rowHeight="2:1" gutterSize="8px">
+      <mat-grid-tile >
+        grid one
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        grid two
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
+
+
