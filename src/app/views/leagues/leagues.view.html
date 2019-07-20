@@ -1,0 +1,27 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start center" class="container">
+  <div class="item">
+      <mat-toolbar>
+          <mat-toolbar-row></mat-toolbar-row>
+          <mat-toolbar-row></mat-toolbar-row>
+          <mat-toolbar-row>
+            <span fxFlex></span>
+            <span fxFlex fxLayoutAlign="center center">Leagues</span>
+            <span fxFlex></span>
+          </mat-toolbar-row>
+          <mat-toolbar-row></mat-toolbar-row>
+          <mat-toolbar-row></mat-toolbar-row>
+        </mat-toolbar>
+  </div>
+  <div fxFlex="5" fxLayoutAlign="end center" class="item margins" style="padding-right: 25px; margin-bottom: 15px;">
+    <button mat-icon-button color="accent"  routerLink="create">
+      <mat-icon class="league-add">add_circle</mat-icon>
+    </button>
+  </div>
+  <div fxFlex="30" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="8px"
+  fxLayout.xs="column" class="leaguesContainer" class="item margins">
+    <div fxFlex="1 1 32.7%" fxFlex.xs="1 0 auto" *ngFor="let league of leagues" >
+        <cl-league-card [league]="league"></cl-league-card>
+    </div>
+  </div>
+</div>
+

@@ -11,3 +11,7 @@ body {
 .primary-dark {
   background-color: mat-color($cl-primary, darker);
 }
+
+.primary-light {
+  background-color: mat-color($cl-primary, lighter)
+}
