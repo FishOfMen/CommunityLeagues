@@ -3,6 +3,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './app.routing';
+import { LeaguesModule } from './views/leagues/leagues.module';
+
 
 @NgModule({
   declarations: [
@@ -12,6 +14,7 @@ import { RoutingModule } from './app.routing';
     CoreModule,
     SharedModule,
     RoutingModule,
+    LeaguesModule
   ],
   bootstrap: [AppComponent]
 })

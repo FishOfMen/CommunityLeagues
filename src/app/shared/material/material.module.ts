@@ -11,6 +11,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
+  MatGridListModule,
 } from '@angular/material';
 
 @NgModule({
@@ -26,6 +27,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    MatGridListModule
   ],
 })
 export class MaterialModule { }

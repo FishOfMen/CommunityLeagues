@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material';
 import { AuthService } from './services/auth.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'cl-root',
   templateUrl: './app.component.html',
@@ -20,7 +21,9 @@ export class AppComponent implements OnInit {
     this._loggedIn$ = this._authService.loggedIn$;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   _logout() {
     this._authService.logout();

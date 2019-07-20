@@ -1,0 +1,27 @@
+@import '../../../_cl.theme.scss';
+
+.mat-toolbar {
+  background-color: mat-color($cl-accent, lighter)
+}
+
+.container {
+  background-color: mat-color($cl-primary, lighter);
+}
+
+.leaguesContainer {
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+}
+
+.item {
+  width: 100%;
+}
+
+.margins {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.league-add {
+  font-size: 48px;
+}
