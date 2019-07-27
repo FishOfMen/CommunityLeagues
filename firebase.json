@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/community-leagues",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

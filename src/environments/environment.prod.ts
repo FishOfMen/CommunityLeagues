@@ -1,9 +1,8 @@
 export const environment = {
   production: true,
-  api_endpoint: 'https://communityleaguesapp.com/api',
+  api_endpoint: 'http://communityleaguesapi/api',
   websocket: {
-    key: '2e266b88d23abe616eaa',
+    key: '123456',
     cluster: 'us2',
-    forceTLS: true
   }
 };

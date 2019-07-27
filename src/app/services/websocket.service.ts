@@ -17,7 +17,9 @@ export class WebsocketService {
   constructor(private http: HttpClient) {
     this.websocket = new Pusher(environment.websocket.key, {
       cluster: environment.websocket.cluster,
-      encrypted: true
+      encrypted: false,
+      wsHost: '127.0.0.1',
+      wsPort: '6001',
     });
   }
 
