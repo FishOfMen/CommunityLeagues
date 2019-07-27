@@ -1,5 +1,18 @@
 @import '../../../../_cl.theme.scss';
 
 .container {
-  background-color: mat-color($cl-primary, lighter)
+  background-color: mat-color($cl-primary, lighter);
+  padding: 1%;
+}
+
+.grid {
+  margin: 1%;
+}
+
+.tile {
+  background-color: lightblue;
+}
+
+.column {
+  margin: 5px;
 }

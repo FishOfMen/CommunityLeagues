@@ -59,4 +59,11 @@ export class LeaguesService {
   getLeague(id: string): Observable<any> {
     return this.http.get(this.get_league_route + id);
   }
+
+  getTeams(id: string): Observable<any> {
+    return this.http.get(this.get_league_route + 'teams/' + id)
+      .pipe(
+        tap(teams => console.log(teams))
+      );
+  }
 }
